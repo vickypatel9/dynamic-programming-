@@ -13,6 +13,7 @@ class Solution {
         int n=cost.length;
         int dp[]=new int[n+1];
         Arrays.fill(dp,-1);
+        // uper se jo return ayega usme last (n-1) tak pahuch kar waha se age badhne ka cost add hokar ayega .
         return Math.min(solve(cost,n-1,dp),solve(cost,n-2,dp));
     }
 }

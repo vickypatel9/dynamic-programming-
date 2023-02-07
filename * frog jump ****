@@ -22,6 +22,6 @@ public static void main(String args[]) {
   int n=height.length;
   int dp[]=new int[n];
   Arrays.fill(dp,-1);
-  System.out.println(solve(n-1,height,dp));
+  System.out.println(solve(n-1,height,dp));  // we ahve to reach from 0 to N-1 stair or 1 to N stair .
 }
 }

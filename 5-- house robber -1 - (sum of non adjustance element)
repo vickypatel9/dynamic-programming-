@@ -8,8 +8,8 @@ class Solution {
        if(dp[index]!=-1){
            return dp[index];
        }
-        int k1=nums[index]+solve(nums,index-2,dp);
-       int k2=solve(nums,index-1,dp);
+        int k1=nums[index]+solve(nums,index-2,dp);  // he can not rob two adjucent house so he will wove to index-2 after robbing to index .
+       int k2=0+solve(nums,index-1,dp);              // if he is not robbing to current index then he can rob to index-1 .
        
        return dp[index]=Math.max(k1,k2);
     }

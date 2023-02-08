@@ -1,4 +1,4 @@
-// all possible steps are possible by frog form 1 to N;
+// frog can jump to all possible steps  form 1 to N;
 
 import java.util.*;
 class TUF{

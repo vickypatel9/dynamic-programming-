@@ -15,9 +15,17 @@ class Solution {
     }
     public int rob(int[] nums) {
         int n=nums.length-1;
-        int temp1[]=new int[n];
-        int temp2[]=new int[n];
-        int p1=0;
+        
+        
+        
+      // ****  we are breaking problem into two sub problem and solving them separatly to get the solution . *** 
+        
+        int temp1[]=new int[n];  // not taking first index in this array .
+        
+        int temp2[]=new int[n];// not taking last index  in this array .
+        
+        
+        int p1=0;                    // index p1 to fill temp1 array   .
         int p2=0;
         if(n==0){
             return nums[0];
@@ -31,10 +39,13 @@ class Solution {
         }
         int n1=temp1.length;
         int n2=temp2.length;
-       int dp[]=new int [n1+1];
+        
+      int dp[]=new int [n1+1]; //
+      
        Arrays.fill(dp,-1);
        int k1= solve(temp1,n1-1,dp);
-       Arrays.fill(dp,-1);
+       
+       Arrays.fill(dp,-1);  // filling all element with -1 to use the same dp array for second array .
        int k2= solve(temp2,n2-1,dp);
        return Math.max(k1,k2);
     }

@@ -1,6 +1,7 @@
 //Given a number of stairs and a frog, the frog wants to climb from the 0th stair to the (N-1)th stair. At a time the frog can climb either one or two steps.
 //Whenever the frog jumps from a stair i to stair j, the energy consumed in the jump is abs(height[i]- height[j]), where abs() means the absolute difference. 
 
+// isme sara kuch explain hai...
 
 import java.util.*;
 class TUF{
@@ -22,6 +23,7 @@ public static void main(String args[]) {
   int n=height.length;
   int dp[]=new int[n];
   Arrays.fill(dp,-1);
-  System.out.println(solve(n-1,height,dp));  // we ahve to reach from 0 to N-1 stair or 1 to N stair .
+  System.out.println(solve(n-1,height,dp));  //we ahve to reach from 0 to N-1 stair or 1 to N stair . This function solve() represent the cost to reach N-1 inde starting from
+                                               // 0 index . according to this we have to think of base cases. 
 }
 }

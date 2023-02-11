@@ -1,0 +1,30 @@
+// do not use boolean array for memoization it will give TLE
+
+class Solution {
+    public int solve(int []nums, int[][] dp,int n,int sum){
+        if(n<0 || sum<0 )
+            return 0;
+        if(sum==0)
+            return 1;
+        if(dp[n][sum] != -1)
+            return dp[n][sum];
+            int k2=0;
+        
+          int k1= solve(nums,dp,n-1,sum) ;
+          
+            k2= solve(nums,dp,n-1,sum-nums[n]);
+        return dp[n][sum]=k1|k2;
+    }
+    public boolean canPartition(int[] nums) {
+        int sum=0;
+        for(int n:nums){
+            sum += n;
+        }
+        if(sum%2 != 0)
+            return false;
+        int dp[][]=new int[nums.length+1][sum/2+1];
+        for(int row[]:dp)
+            Arrays.fill(row,-1);
+        return solve(nums,dp,nums.length-1,sum/2)==1?true:false;
+    }
+}

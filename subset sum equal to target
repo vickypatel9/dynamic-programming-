@@ -1,0 +1,31 @@
+ 
+ 
+ import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static boolean solve(int n,int k,int arr[],boolean [][]dp){
+          if(k<0)
+          return false;
+        if(k==0)
+        return true;
+        if(n==0)
+        return arr[0]==k;
+        
+          if(dp[n][k]!=false)
+          return dp[n][k];
+      boolean b1=solve(n-1,k,arr,dp);
+   
+     
+       boolean b2=solve(n-1,k-arr[n],arr,dp);
+      return dp[n][k]=b1||b2;
+
+    }
+    public static boolean subsetSumToK(int n, int k, int arr[]){
+        boolean dp[][]=new boolean [1005][1005];
+        for(boolean[]i:dp)
+        Arrays.fill(i,false);
+   
+
+        return solve(n-1,k,arr,dp);
+    }
+}

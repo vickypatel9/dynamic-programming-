@@ -1,0 +1,37 @@
+
+
+class Solution 
+{ 
+   public static int solve(int w, int wt[], int val[], int n,int[][]dp){
+      if(n==0){
+          if(w>=wt[n]){
+              return val[0];
+          }
+          else
+          return 0;
+      }
+    
+       
+       if(dp[n][w]!=-1)
+       return dp[n][w];
+      
+       
+       int k1=0+solve(w,wt,val,n-1,dp);
+       int k2=-(int)(1e9);
+      
+        if(w>=wt[n])
+        k2=val[n]+solve(w-wt[n],wt,val,n-1,dp);
+       return dp[n][w]=Math.max(k1,k2);
+       
+   }
+    static int knapSack(int W, int wt[], int val[], int n) 
+    { 
+        int dp[][]=new int [n][W+1];
+        for(int i[]:dp){
+            Arrays.fill(i,-1);
+        }
+        
+        int k=solve(W,wt,val,n-1,dp);
+         return k;
+    } 
+}

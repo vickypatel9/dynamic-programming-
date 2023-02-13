@@ -1,0 +1,32 @@
+
+
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int solve(int []nums,int n,int k,int[][]dp){
+        
+       
+         if(k==0)
+        return 1;
+        
+      if(k<0||n<0)
+        return 0;
+      
+        if(dp[n][k]!=-1)
+        return dp[n][k];
+        int k2=0;
+        int k1=solve(nums,n-1,k,dp);
+        
+         k2=solve(nums,n-1,k-nums[n],dp);
+        return dp[n][k]=k1+k2;
+    }
+    public static int findWays(int num[], int tar) {
+        int n=num.length;
+        int dp[][]=new int[n][tar+1];
+        for(int []i:dp){
+            Arrays.fill(i,-1);
+        }
+        int k=solve(num,n-1,tar,dp);
+        return k;
+    }
+}

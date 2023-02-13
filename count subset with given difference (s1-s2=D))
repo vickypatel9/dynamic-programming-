@@ -1,0 +1,15 @@
+//*
+s1=sum of elements present in this set
+s2=sum of elements present int this set
+therefor;
+s1+s2=total sum
+and given ;
+s1-s2=D
+so ;
+
+total sum-2*s2=D
+s2=( total sum-D)/2;
+
+therefore we have to find all the subsets whose sum equal to s2 .
+
+*// 

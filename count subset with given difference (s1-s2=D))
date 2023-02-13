@@ -15,6 +15,9 @@ therefore we have to find all the subsets whose sum equal to s2 .
 *// 
 // ********  target is equal to s2 ***********
 
+n-> index
+k->target
+
 
 import java.util.* ;
 import java.io.*; 

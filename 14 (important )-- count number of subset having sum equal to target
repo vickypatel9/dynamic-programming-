@@ -38,8 +38,8 @@ import java.util.* ;
 import java.io.*; 
 public class Solution {
     int solve(int ind, int sum, int arr[], int dp[][]) {
-        if(ind == 0) {                                       // we dont want to just stop when target become 0, because then we will miss cases when 0 also included in the answer
-                                                                 // array . there we will go till 0th index to include all 0 after sum become 0 whatever.
+        if(ind == 0) {                                  // we dont want to just stop when target become 0, because then we will miss cases when 0 also present in input
+                                                                 // array . there for we will go till 0th index to include all 0 after sum become 0 whatever.
             if(sum == 0 && arr[0] == 0) return 2;
             if(sum == 0 || sum == arr[0]) return 1;
             return 0;

@@ -1,4 +1,5 @@
-
+// given a right triangle Matrix ...starting from top you have to reach at bottom with minimum path sum .
+plz note that bottom row has may be more than 1 element and you can choose any of them as final destination //
 
 class Solution {
     public int minimumTotal(List<List<Integer>> triangle) {

@@ -1,3 +1,6 @@
+// infinite suppy of coin 
+// at index=0 we are not simply taking like previous cases because there is a condition of Target to be achieved if we take or do not take rondomly , may be we do add an undesirable elements which is not fullfilling our target condition .
+//
 
 class Solution {
     public int solve(int[]nums,int tar,int index,int [][]dp){
@@ -11,14 +14,17 @@ class Solution {
          return dp[index][tar];
      }
      int k1=0+solve(nums,tar,index-1,dp);
+
       int k2=(int)1e9;
       if(tar>=nums[index])
         k2=1+solve(nums,tar-nums[index],index,dp);
+
+// since infinite supply of coin is there so we are standing at same position to take that element again if possible .//
+
         return dp[index][tar]=Math.min(k1,k2);
 
-
-
     }
+
     public int coinChange(int[] coins, int amount) {
         int n=coins.length;
         int [][]dp=new int[n][amount+1];

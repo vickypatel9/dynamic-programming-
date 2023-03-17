@@ -1,4 +1,6 @@
 // do not use boolean array for memoization it will give TLE
+// 2 equal sum me devide karna hai array ko ...
+// subset sum equal to Target wale method se ho jayega.
 
 class Solution {
     public int solve(int []nums, int[][] dp,int n,int sum){

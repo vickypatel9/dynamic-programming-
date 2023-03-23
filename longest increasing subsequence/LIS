@@ -1,0 +1,29 @@
+
+
+
+class Solution {
+    public int lengthOfLIS(int[] array) {
+        int [] LIS = new int [array.length];   // this is dp Array
+        int omax=0;
+        for (int i=0; i<array.length; i++) {   // initially feeling dp array with 1.
+            LIS[i] = 1;
+        }
+        for (int i=1; i<array.length; i++) {    // since first element of dp array is always one ,so starting with first elemnt .
+            int maxi=0;
+            for (int j=0; j<i; j++) {
+                if (array[i] > array[j] ){         // finding largest element of dp array before the current index . condition is that current value must be greater 
+                                                        // that the previous value of input array so that we can append the current value behind them and increase the length 
+                                                         by 1.
+                     if(LIS[j]>maxi)
+                     maxi=LIS[j];
+                }
+            }
+            LIS[i]=maxi+1;                         // increasing the length by 1.
+        }
+        for (int i=0; i<LIS.length; i++) {        // finding the largest value in out dp array .
+            if (omax < LIS[i])
+                omax = LIS[i];
+        }
+        return omax;
+    }
+}

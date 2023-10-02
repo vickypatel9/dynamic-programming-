@@ -1,3 +1,4 @@
+ // this is zero based indexing 
 
 class Solution {
     public int solve(String s1,String s2,int n1,int n2,int[][]dp){
